@@ -32,7 +32,8 @@ app.use(
 
 app.use(express.urlencoded({ extended: true }));
 
-DBConnection(process.env.dbUrl);
+DBConnection(process.env.MONGO_URI);
+console.log(process.env.MONGO_URI);
 
 // Routes
 app.use("/api/users", userRoutes);
