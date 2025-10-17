@@ -5,6 +5,7 @@ export const createUser = async (req, res) => {
     // req.body contains text data (like name, email, role)
     // req.file contains image info
     const imageUrl = req.file?.path;
+    console.log("imageurl", imageUrl)
 
     const data = {
       ...req.body,
@@ -13,9 +14,10 @@ export const createUser = async (req, res) => {
 
     const user = new UserModel(data);
     await user.save();
-
+     
     res.status(201).json(user);
   } catch (err) {
+    console.log("err", err)
     res.status(500).json({ error: err.message });
   }
 };
