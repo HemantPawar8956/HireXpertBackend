@@ -12,7 +12,7 @@ export const googleLogin = async (req, res) => {
       idToken: token,
       audience: process.env.Google_Client_Id,
     });
-
+    console.log(Google_Client_Id);
     const payload = ticket.getPayload();
     const { email, name, picture, sub } = payload;
 
@@ -39,7 +39,7 @@ export const googleLogin = async (req, res) => {
       searchHistory: [
         "frontend developer",
         "backend developer",
-        "fullstack",    
+        "fullstack",
         "designer",
       ],
       interestedOrg: ["google", "microsoft", "amazon", "meta", "netflix"],
