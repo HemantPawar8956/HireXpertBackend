@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import UserModel from "./../modals/userModel.js";
 import "dotenv/config";
 const client = new OAuth2Client(process.env.Google_Client_Id);
-
+console.log(client);
 export const googleLogin = async (req, res) => {
   try {
     const { token } = req.body;
